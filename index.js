@@ -66,6 +66,9 @@ function criarTabela(url_icon, name) {
     botao.onclick = function(){(otherpage(name))};
 
     colunaIcon.src = url_icon;
+    colunaIcon.onerror = function () {
+        colunaIcon.src = pokemon.url_icon_2;
+    }
     colunaNome.innerText = name;
     colunaBotao.appendChild(botao);
 
