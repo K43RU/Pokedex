@@ -14,6 +14,28 @@ function inserirFiltro(){
     filtro.className = 'filtro';
     const filtrar = document.createElement('button');
     document.body.appendChild(filtrar);
+    filtrar.onclick = filtrar;
+}
+
+function Pesquisar(string) {
+    tabela = document.getElementsByTagName("table")[0];
+    linhas = tabela.getElementsByTagName("tr");
+    for (let r = 1; r < linhas.length; r++) {
+        dados = linhas[r].getElementsByTagName("td");
+        let encontrei = false;
+        for (let d = 0; d < dados.length; d++) {
+            if (dados[d].innerText.indexOf(string) >= 0) {
+                encontrei = true;
+                break;
+            }
+        }
+        if (encontrei) {
+            linhas[r].style.display = "";
+        } else {
+            linhas[r].style.display = "none";
+        }
+    }
+
 }
 
 inserirFiltro();
@@ -43,7 +65,8 @@ function mostrarTabela(){
     listPoke.forEach(function (element){
         const linhaTabela = criarTabela(
             element.url_icon,
-            element.name
+            element.name,
+            element.id
         )
             tabela.appendChild(linhaTabela);
             tabela.className = 'tabela';
@@ -51,7 +74,7 @@ function mostrarTabela(){
     document.body.appendChild(tabela);
 }
 
-function criarTabela(url_icon, name) {
+function criarTabela(url_icon, name, id) {
     const botao = document.createElement('button');
     botao.innerHTML = "clique";
 
@@ -63,10 +86,10 @@ function criarTabela(url_icon, name) {
     colunaIcon.className = 'colunaIcon';
     colunaNome.className = 'colunaNome';
 
-    botao.onclick = function(){(otherpage(name))};
+    botao.onclick = function(){(otherpage(id))};
 
     colunaIcon.src = url_icon;
-    colunaIcon.onerror = function () {
+    url_icon = function () {
         colunaIcon.src = pokemon.url_icon_2;
     }
     colunaNome.innerText = name;
@@ -81,8 +104,8 @@ function criarTabela(url_icon, name) {
 
 mostrarTabela();
 
-function otherpage(name){
-    window.location.href = "pokemon.html?" + name;
+function otherpage(id){
+    window.location.href = "pokemon.html?" + id;
 }
 
 // function getPoke() {
