@@ -3,7 +3,7 @@ const userName = user.replace('?', '');
 aparecer();
 function aparecer(){(getPoke(name))};
 
-function getPoke() {
+function getPoke(name) {
     fetch('https://prof-poke-api.herokuapp.com/api/pokemon/' + id);
         .then(function (resultado) {
             resultado.json().then(function (data) {

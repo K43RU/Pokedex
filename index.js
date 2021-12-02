@@ -12,6 +12,8 @@ function inserirFiltro(){
     filtro.placeholder = "filtro";
     document.body.appendChild(filtro);
     filtro.className = 'filtro';
+    const filtrar = document.createElement('button');
+    document.body.appendChild(filtrar);
 }
 
 inserirFiltro();
