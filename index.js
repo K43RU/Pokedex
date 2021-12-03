@@ -14,28 +14,6 @@ function inserirFiltro(){
     filtro.className = 'filtro';
     const filtrar = document.createElement('button');
     document.body.appendChild(filtrar);
-    filtrar.onclick = filtrar;
-}
-
-function Pesquisar(string) {
-    tabela = document.getElementsByTagName("table")[0];
-    linhas = tabela.getElementsByTagName("tr");
-    for (let r = 1; r < linhas.length; r++) {
-        dados = linhas[r].getElementsByTagName("td");
-        let encontrei = false;
-        for (let d = 0; d < dados.length; d++) {
-            if (dados[d].innerText.indexOf(string) >= 0) {
-                encontrei = true;
-                break;
-            }
-        }
-        if (encontrei) {
-            linhas[r].style.display = "";
-        } else {
-            linhas[r].style.display = "none";
-        }
-    }
-
 }
 
 inserirFiltro();
@@ -107,24 +85,3 @@ mostrarTabela();
 function otherpage(id){
     window.location.href = "pokemon.html?" + id;
 }
-
-// function getPoke() {
-//     fetch('https://prof-poke-api.herokuapp.com/api/pokedex/')
-//         .then(function (resultado) {
-//             resultado.json().then(function (data) {
-//                 console.log('Poke Data:', data);
-//                 showPoke(data);
-//             });
-//         }).catch(function (erro) {
-//             console.log('erro:', erro);
-//         });
-// }
-
-// getPoke();
-
-// function showPoke(poke, name) {
-//     if (!poke) return;
-//     let divName = document.createElement('div');
-//     divName.innerText = name;
-//     document.body.appendChild(divName);
-// }
