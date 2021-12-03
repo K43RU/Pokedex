@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap');
+
+*{
+    font-family: Oswald;
+    font-weight: bolder;
+}
+
 .logo{
     width: 400px;
     height: 150px;
@@ -6,11 +13,11 @@
 }
 
 body{
-    background-image: linear-gradient(90deg, rgb(0, 255, 234), rgb(95, 218, 255), rgb(0, 255, 234));
+    background-image: linear-gradient(90deg, rgb(0, 140, 255), rgb(0, 255, 234), rgb(95, 218, 255), rgb(0, 140, 255));
 }
 
-table, tr, td{
-    border: white 1px solid;
+table{
+    background-color: tomato;
 }
 
 .tabela{
@@ -43,4 +50,5 @@ table, tr, td{
 
 .info{
     margin-left: 46.5vw;
+    font-size: 20px;
 }

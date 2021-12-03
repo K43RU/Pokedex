@@ -7,16 +7,21 @@ logo.src = 'https://logodownload.org/wp-content/uploads/2017/08/pokemon-logo.png
 logo.className = 'logo';
 document.body.appendChild(logo);
 
-function inserirFiltro(){
     const filtro = document.createElement('input');
     filtro.placeholder = "filtro";
     document.body.appendChild(filtro);
     filtro.className = 'filtro';
     const filtrar = document.createElement('button');
     document.body.appendChild(filtrar);
-}
+    filtrar.onclick = filtrador;
 
-inserirFiltro();
+    function filtrador(){
+        filtro.value = "";
+        const nome = document.querySelector('.filtro').value;
+        if(listPoke.name != nome){
+            linha.remove;
+        }
+    }
 
 function mostrarTabela(){
     const actualTable = document.querySelector('table');
