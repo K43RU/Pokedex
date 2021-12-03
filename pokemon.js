@@ -13,14 +13,14 @@ function getPoke(id) {
         .then(function (resultado) {
             resultado.json().then(function (data) {
                 console.log('Poke data:', data);
-                showUserGithub(data);
+                showPoke(data);
             });
         }).catch(function (erro) {
             console.log('erro:', erro);
         });
 }
 
-function showUserGithub(id) {
+function showPoke(id) {
     if (!id) return;
     let divName = document.createElement('div');
     let divImage = document.createElement('img');
