@@ -10,18 +10,14 @@ document.body.appendChild(logo);
     const filtro = document.createElement('input');
     filtro.placeholder = "filtro";
     document.body.appendChild(filtro);
-    filtro.className = 'filtro';
+    filtro.id = 'myInput';
+    filtro.onkeyup = 'myFunction()';
     const filtrar = document.createElement('button');
     document.body.appendChild(filtrar);
-    filtrar.onclick = filtrador;
-
-    function filtrador(){
-        filtro.value = "";
-        const nome = document.querySelector('.filtro').value;
-        if(listPoke.name != nome){
-            linha.remove;
-        }
-    }
+    filtrar.onclick = myFunction;
+    filtrar.className = 'filtrar';
+    filtrar.innerHTML = 'pesquisar';
+    
 
 function mostrarTabela(){
     const actualTable = document.querySelector('table');
@@ -30,6 +26,7 @@ function mostrarTabela(){
     }
 
     const tabela = document.createElement('table');
+    tabela.id = 'myTable';
     const linha = document.createElement('tr');
     const colunaIcon = document.createElement('th');
     const colunaNome = document.createElement('th');
@@ -90,3 +87,23 @@ mostrarTabela();
 function otherpage(id){
     window.location.href = "pokemon.html?" + id;
 }
+
+function myFunction() {
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById('myInput');
+    filter = input.value.toUpperCase();
+    table = document.getElementById('myTable');
+    tr = table.getElementsByTagName("tr");
+  
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[0];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }
+    }
+  }

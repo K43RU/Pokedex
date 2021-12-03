@@ -29,9 +29,9 @@ table{
     height: 70px;
 }
 
-.filtro{
+#myInput{
     margin-bottom: 10px;
-    margin-left: -18.5vw;
+    margin-left: -22vw;
 }
 
 .pokeLogo{
@@ -51,4 +51,12 @@ table{
 .info{
     margin-left: 46.5vw;
     font-size: 20px;
+}
+
+.filtrar{
+    padding: 5px 17px;
+    font-size: 13px;
+    margin-top: 175px;
+    margin-left: 5px;
+    position: absolute;
 }
